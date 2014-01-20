@@ -140,6 +140,7 @@ TopicExt.prototype.decomposeReply = function ($r) {
   if (reply.username == self.topic.by) {
     reply.$avatar.css('-webkit-box-shadow', '0 0 10px 5px #06c');
     reply.$avatar.css('box-shadow', '0 0 10px 5px #06c');
+    reply.toggleClass('dock_area');
   }
 
   reply.replyTime = $('tr>td:last>span', $r).text();
