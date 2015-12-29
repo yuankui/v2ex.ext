@@ -99,7 +99,7 @@ TopicExt.prototype.addMoreTopicButton = function () {
  */
 TopicExt.prototype.addStarHighlight = function () {
   $spans = $('span.small.fade');
-  $b = $spans.filter(function(a,b) {
+  $spans.each(function(a,b) {
     if (b.textContent.startsWith("♥")) {
       $(b).parent('td').css("box-shadow", "0px 0px 10px rebeccapurple").css("padding", "10px");
     }
