@@ -56,6 +56,8 @@ TopicExt.prototype.init = function () {
   if (self.newReplyBox) {
     self.addWBSGHTCButton();
   }
+
+  self.addStarHighlight();
 };
 
 
@@ -90,6 +92,18 @@ TopicExt.prototype.addMoreTopicButton = function () {
 
   $topicButtons.append($watchOwnerButton);
   $topicButtons.append($showAllButton);
+};
+
+/**
+ * 添加点赞高亮
+ */
+TopicExt.prototype.addStarHighlight = function () {
+  $spans = $('span.small.fade');
+  $b = $spans.filter(function(a,b) {
+    if (b.textContent.startsWith("♥")) {
+      $(b).parent('td').css("box-shadow", "0px 0px 10px rebeccapurple").css("padding", "10px");
+    }
+  })
 };
 
 
